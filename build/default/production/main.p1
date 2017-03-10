@@ -1,89 +1,159 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"40 ringbuffer.h
-[s S354 `uc 1 `uc 1 `uc -> 48 `i ]
-[n S354 ringbuffer pp gp dat ]
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdlib.h: 7: typedef unsigned short wchar_t;
-[; ;stdlib.h: 15: typedef struct {
-[; ;stdlib.h: 16: int rem;
-[; ;stdlib.h: 17: int quot;
-[; ;stdlib.h: 18: } div_t;
-[; ;stdlib.h: 19: typedef struct {
-[; ;stdlib.h: 20: unsigned rem;
-[; ;stdlib.h: 21: unsigned quot;
-[; ;stdlib.h: 22: } udiv_t;
-[; ;stdlib.h: 23: typedef struct {
-[; ;stdlib.h: 24: long quot;
-[; ;stdlib.h: 25: long rem;
-[; ;stdlib.h: 26: } ldiv_t;
-[; ;stdlib.h: 27: typedef struct {
-[; ;stdlib.h: 28: unsigned long quot;
-[; ;stdlib.h: 29: unsigned long rem;
-[; ;stdlib.h: 30: } uldiv_t;
-[; ;stdlib.h: 53: extern double atof(const char *);
-[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 55: extern int atoi(const char *);
-[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 57: extern long atol(const char *);
-[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 60: extern int rand(void);
-[; ;stdlib.h: 61: extern void srand(unsigned int);
-[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 75: extern void * malloc(size_t);
-[; ;stdlib.h: 76: extern void free(void *);
-[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
-[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
-[; ;stdlib.h: 86: extern int atexit(void (*)(void));
-[; ;stdlib.h: 87: extern char * getenv(const char *);
-[; ;stdlib.h: 88: extern char ** environ;
-[; ;stdlib.h: 89: extern int system(char *);
-[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 92: extern int abs(int);
-[; ;stdlib.h: 93: extern long labs(long);
-[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
+"7032 /Applications/microchip/xc8/v1.37/include/pic16f1827.h
+[v _IRCF0 `Vb ~T0 @X0 0 e@1227 ]
+"7034
+[v _IRCF1 `Vb ~T0 @X0 0 e@1228 ]
+"7036
+[v _IRCF2 `Vb ~T0 @X0 0 e@1229 ]
+"7038
+[v _IRCF3 `Vb ~T0 @X0 0 e@1230 ]
+"1607
+[v _OSCTUNE `Vuc ~T0 @X0 0 e@152 ]
+"414
+[v _PORTA `Vuc ~T0 @X0 0 e@12 ]
+"2797
+[v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
+"1120
+[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
+"475
+[v _PORTB `Vuc ~T0 @X0 0 e@13 ]
+"2848
+[v _ANSELB `Vuc ~T0 @X0 0 e@397 ]
+"1181
+[v _TRISB `Vuc ~T0 @X0 0 e@141 ]
+"3433
+[v _WPUB `Vuc ~T0 @X0 0 e@525 ]
+"7572
+[v _nWPUEN `Vb ~T0 @X0 0 e@1199 ]
+"7256
+[v _RXDTSEL `Vb ~T0 @X0 0 e@2287 ]
+"7510
+[v _TXCKSEL `Vb ~T0 @X0 0 e@2288 ]
+"6900
+[v _CREN `Vb ~T0 @X0 0 e@3308 ]
+"7512
+[v _TXEN `Vb ~T0 @X0 0 e@3317 ]
+"7344
+[v _SYNC `Vb ~T0 @X0 0 e@3316 ]
+"6694
+[v _BRGH `Vb ~T0 @X0 0 e@3314 ]
+"6692
+[v _BRG16 `Vb ~T0 @X0 0 e@3323 ]
+"3147
+[v _SPBRG `Vuc ~T0 @X0 0 e@411 ]
+"7270
+[v _SPEN `Vb ~T0 @X0 0 e@3311 ]
+"3098
+[v _RCREG `Vuc ~T0 @X0 0 e@409 ]
+"7248
+[v _RCIF `Vb ~T0 @X0 0 e@141 ]
+"6183
+[v _TMR4 `Vuc ~T0 @X0 0 e@1045 ]
+"6202
+[v _PR4 `Vuc ~T0 @X0 0 e@1046 ]
+"6221
+[v _T4CON `Vuc ~T0 @X0 0 e@1047 ]
+"7446
+[v _TMR4IF `Vb ~T0 @X0 0 e@153 ]
+"6310
+[v _PR6 `Vuc ~T0 @X0 0 e@1053 ]
+"6329
+[v _T6CON `Vuc ~T0 @X0 0 e@1054 ]
+"7452
+[v _TMR6IF `Vb ~T0 @X0 0 e@155 ]
+"1840
+[v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
+"1919
+[v _ADCON1 `Vuc ~T0 @X0 0 e@158 ]
+"4532
+[v _CCP1CON `Vuc ~T0 @X0 0 e@659 ]
+"4494
+[v _CCPR1L `Vuc ~T0 @X0 0 e@657 ]
+"5284
+[v _CCPTMRS `Vuc ~T0 @X0 0 e@670 ]
+"4930
+[v _CCP2CON `Vuc ~T0 @X0 0 e@666 ]
+"4892
+[v _CCPR2L `Vuc ~T0 @X0 0 e@664 ]
+"6826
+[v _CCP2SEL `Vb ~T0 @X0 0 e@2283 ]
+"5501
+[v _CCP3CON `Vuc ~T0 @X0 0 e@787 ]
+"5463
+[v _CCPR3L `Vuc ~T0 @X0 0 e@785 ]
+"5608
+[v _CCP4CON `Vuc ~T0 @X0 0 e@794 ]
+"5570
+[v _CCPR4L `Vuc ~T0 @X0 0 e@792 ]
+"7444
+[v _TMR4IE `Vb ~T0 @X0 0 e@1177 ]
+"7246
+[v _RCIE `Vb ~T0 @X0 0 e@1165 ]
+"7184
+[v _PEIE `Vb ~T0 @X0 0 e@94 ]
+"6962
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"7488
+[v _TRMT `Vb ~T0 @X0 0 e@3313 ]
+"3117
+[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
+"28 /Applications/microchip/xc8/v1.37/include/pic.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+[p mainexit ]
+"6652 /Applications/microchip/xc8/v1.37/include/pic16f1827.h
+[v _ADON `Vb ~T0 @X0 0 e@1256 ]
+[v F2766 `(v ~T0 @X0 1 tf1`ul ]
+"152 /Applications/microchip/xc8/v1.37/include/pic.h
+[v __delay `JF2766 ~T0 @X0 0 e ]
+[p i __delay ]
+"6966 /Applications/microchip/xc8/v1.37/include/pic16f1827.h
+[v _GO_nDONE `Vb ~T0 @X0 0 e@1257 ]
+"1821
+[v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
+"19 main.h
+[p x FOSC=INTOSC ]
+"20
+[p x WDTE=OFF ]
+"21
+[p x PWRTE=OFF ]
+"22
+[p x MCLRE=ON ]
+"23
+[p x CP=OFF ]
+"24
+[p x CPD=OFF ]
+"25
+[p x BOREN=OFF ]
+"26
+[p x CLKOUTEN=OFF ]
+"27
+[p x IESO=OFF ]
+"28
+[p x FCMEN=OFF ]
+"30
+[p x WRT=OFF ]
+"31
+[p x PLLEN=ON ]
+"32
+[p x STVREN=OFF ]
+"33
+[p x BORV=LO ]
+"34
+[p x LVP=OFF ]
+"36
+[p k ]
+"37
+[p n 752 ]
+"38
+[p n 520 ]
+"39
+[p n 1498 ]
+"40
+[p o ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1827.h: 49: extern volatile unsigned char INDF0 @ 0x000;
 "51 /Applications/microchip/xc8/v1.37/include/pic16f1827.h
 [; ;pic16f1827.h: 51: asm("INDF0 equ 00h");
@@ -2835,149 +2905,1050 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern unsigned char __resetbits;
 [; ;pic.h: 187: extern __bit __powerdown;
 [; ;pic.h: 188: extern __bit __timeout;
-[; ;ringbuffer.h: 40: struct ringbuffer {
-[; ;ringbuffer.h: 41: uint8_t pp;
-[; ;ringbuffer.h: 42: uint8_t gp;
-[; ;ringbuffer.h: 43: uint8_t dat[48];
-[; ;ringbuffer.h: 44: };
-[; ;ringbuffer.h: 53: struct ringbuffer *ringbufferInit(struct ringbuffer *rb);
-[; ;ringbuffer.h: 63: void ringbufferDelete(struct ringbuffer **rb);
-[; ;ringbuffer.h: 74: uint8_t ringbufferSize(struct ringbuffer *rb);
-[; ;ringbuffer.h: 85: uint8_t ringbufferPut(struct ringbuffer *rb, uint8_t dat);
-[; ;ringbuffer.h: 96: int16_t ringbufferGet(struct ringbuffer *rb);
-"13 ringbuffer.c
-[v _ringbufferInit `(*S354 ~T0 @X0 1 ef1`*S354 ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdlib.h: 7: typedef unsigned short wchar_t;
+[; ;stdlib.h: 15: typedef struct {
+[; ;stdlib.h: 16: int rem;
+[; ;stdlib.h: 17: int quot;
+[; ;stdlib.h: 18: } div_t;
+[; ;stdlib.h: 19: typedef struct {
+[; ;stdlib.h: 20: unsigned rem;
+[; ;stdlib.h: 21: unsigned quot;
+[; ;stdlib.h: 22: } udiv_t;
+[; ;stdlib.h: 23: typedef struct {
+[; ;stdlib.h: 24: long quot;
+[; ;stdlib.h: 25: long rem;
+[; ;stdlib.h: 26: } ldiv_t;
+[; ;stdlib.h: 27: typedef struct {
+[; ;stdlib.h: 28: unsigned long quot;
+[; ;stdlib.h: 29: unsigned long rem;
+[; ;stdlib.h: 30: } uldiv_t;
+[; ;stdlib.h: 53: extern double atof(const char *);
+[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 55: extern int atoi(const char *);
+[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 57: extern long atol(const char *);
+[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 60: extern int rand(void);
+[; ;stdlib.h: 61: extern void srand(unsigned int);
+[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 75: extern void * malloc(size_t);
+[; ;stdlib.h: 76: extern void free(void *);
+[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
+[; ;stdlib.h: 86: extern int atexit(void (*)(void));
+[; ;stdlib.h: 87: extern char * getenv(const char *);
+[; ;stdlib.h: 88: extern char ** environ;
+[; ;stdlib.h: 89: extern int system(char *);
+[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 92: extern int abs(int);
+[; ;stdlib.h: 93: extern long labs(long);
+[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
+"83 main.h
+[v _dat0 `Vui ~T0 @X0 1 e ]
+[; ;main.h: 83: volatile uint16_t dat0;
+"84
+[v _dat1 `Vui ~T0 @X0 1 e ]
+[; ;main.h: 84: volatile uint16_t dat1;
+"85
+[v _cycle_adc `Vuc ~T0 @X0 1 e ]
+[; ;main.h: 85: volatile uint8_t cycle_adc;
+"86
+[v _cycle_timeout `Vuc ~T0 @X0 1 e ]
+[; ;main.h: 86: volatile uint8_t cycle_timeout;
+[; ;main.h: 91: void initFrequency(void);
+[; ;main.h: 92: void initRegisters(void);
+[; ;main.h: 93: void initVariables(void);
+[; ;main.h: 94: void initUART(void);
+[; ;main.h: 95: void initTMR6(void);
+[; ;main.h: 97: void setDutyPWM1(uint16_t duty);
+[; ;main.h: 98: void initPWM1(void);
+[; ;main.h: 100: void setDutyPWM2(uint16_t duty);
+[; ;main.h: 101: void initPWM2(void);
+[; ;main.h: 103: void setDutyPWM3(uint16_t duty);
+[; ;main.h: 104: void initPWM3(void);
+[; ;main.h: 106: void setDutyPWM4(uint16_t duty);
+[; ;main.h: 107: void initPWM4(void);
+[; ;main.h: 109: void initInt(void);
+[; ;main.h: 111: void putc(char c);
+[; ;main.h: 112: void putstr(const char *c);
+"17 main.c
+[v _initFrequency `(v ~T0 @X0 1 ef ]
 {
-[; ;ringbuffer.c: 13: struct ringbuffer *ringbufferInit(struct ringbuffer *rb) {
-[e :U _ringbufferInit ]
-[v _rb `*S354 ~T0 @X0 1 r1 ]
+[; ;main.c: 17: void initFrequency(void) {
+[e :U _initFrequency ]
 [f ]
-[; ;ringbuffer.c: 14: if (rb == (0))
-"14
-[e $ ! == _rb -> -> 0 `i `*S354 356  ]
-[; ;ringbuffer.c: 15: return (0);
-"15
-[e ) -> -> 0 `i `*S354 ]
-[e $UE 355  ]
-[e :U 356 ]
-[; ;ringbuffer.c: 16: rb->pp = 0;
-"16
-[e = . *U _rb 0 -> -> 0 `i `uc ]
-[; ;ringbuffer.c: 17: rb->gp = 0;
-"17
-[e = . *U _rb 1 -> -> 0 `i `uc ]
-[; ;ringbuffer.c: 19: return rb;
-"19
-[e ) _rb ]
-[e $UE 355  ]
-[; ;ringbuffer.c: 20: }
-"20
+[; ;main.c: 27: IRCF0 = 1;
+"27
+[e = _IRCF0 -> -> 1 `i `b ]
+[; ;main.c: 28: IRCF1 = 0;
+"28
+[e = _IRCF1 -> -> 0 `i `b ]
+[; ;main.c: 29: IRCF2 = 1;
+"29
+[e = _IRCF2 -> -> 1 `i `b ]
+[; ;main.c: 30: IRCF3 = 1;
+"30
+[e = _IRCF3 -> -> 1 `i `b ]
+[; ;main.c: 32: OSCTUNE = 0b00000000;
+"32
+[e = _OSCTUNE -> -> 0 `i `uc ]
+[; ;main.c: 33: }
+"33
+[e :UE 354 ]
+}
+"35
+[v _initRegisters `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 35: void initRegisters(void) {
+[e :U _initRegisters ]
+[f ]
+[; ;main.c: 36: PORTA = 0b00000000;
+"36
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 37: ANSELA = 0b00000000;
+"37
+[e = _ANSELA -> -> 0 `i `uc ]
+[; ;main.c: 38: TRISA = 0b00000000;
+"38
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;main.c: 40: PORTB = 0b00000000;
+"40
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 41: ANSELB = 0b00010000;
+"41
+[e = _ANSELB -> -> 16 `i `uc ]
+[; ;main.c: 42: TRISB = 0b00010010;
+"42
+[e = _TRISB -> -> 18 `i `uc ]
+[; ;main.c: 44: WPUB = 0b00000000;
+"44
+[e = _WPUB -> -> 0 `i `uc ]
+[; ;main.c: 45: nWPUEN = 0;
+"45
+[e = _nWPUEN -> -> 0 `i `b ]
+[; ;main.c: 46: }
+"46
 [e :UE 355 ]
 }
-"22
-[v _ringbufferDelete `(v ~T0 @X0 1 ef1`**S354 ]
+"48
+[v _initVariables `(v ~T0 @X0 1 ef ]
 {
-[; ;ringbuffer.c: 22: void ringbufferDelete(struct ringbuffer **rb) {
-[e :U _ringbufferDelete ]
-[v _rb `**S354 ~T0 @X0 1 r1 ]
+[; ;main.c: 48: void initVariables(void) {
+[e :U _initVariables ]
 [f ]
-[; ;ringbuffer.c: 25: }
-"25
+[; ;main.c: 49: dat0 = -1;
+"49
+[e = _dat0 -> -U -> 1 `i `ui ]
+[; ;main.c: 50: dat1 = -1;
+"50
+[e = _dat1 -> -U -> 1 `i `ui ]
+[; ;main.c: 51: cycle_adc = 0;
+"51
+[e = _cycle_adc -> -> 0 `i `uc ]
+[; ;main.c: 52: cycle_timeout = 0;
+"52
+[e = _cycle_timeout -> -> 0 `i `uc ]
+[; ;main.c: 53: }
+"53
+[e :UE 356 ]
+}
+"55
+[v _initUART `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 55: void initUART(void) {
+[e :U _initUART ]
+[f ]
+[; ;main.c: 56: RXDTSEL = 0;
+"56
+[e = _RXDTSEL -> -> 0 `i `b ]
+[; ;main.c: 57: TXCKSEL = 0;
+"57
+[e = _TXCKSEL -> -> 0 `i `b ]
+[; ;main.c: 59: CREN = 1;
+"59
+[e = _CREN -> -> 1 `i `b ]
+[; ;main.c: 60: TXEN = 1;
+"60
+[e = _TXEN -> -> 1 `i `b ]
+[; ;main.c: 61: SYNC = 0;
+"61
+[e = _SYNC -> -> 0 `i `b ]
+[; ;main.c: 69: BRGH = 1;
+"69
+[e = _BRGH -> -> 1 `i `b ]
+[; ;main.c: 70: BRG16 = 1;
+"70
+[e = _BRG16 -> -> 1 `i `b ]
+[; ;main.c: 71: SPBRG = 8;
+"71
+[e = _SPBRG -> -> 8 `i `uc ]
+[; ;main.c: 74: SPEN = 1;
+"74
+[e = _SPEN -> -> 1 `i `b ]
+[; ;main.c: 76: while (RCIF)
+"76
+[e $U 358  ]
+[e :U 359 ]
+[; ;main.c: 77: RCREG;
+"77
+[e _RCREG ]
+[e :U 358 ]
+"76
+[e $ _RCIF 359  ]
+[e :U 360 ]
+[; ;main.c: 78: }
+"78
 [e :UE 357 ]
 }
-"27
-[v _ringbufferSize `(uc ~T0 @X0 1 ef1`*S354 ]
+"80
+[v _initTMR4 `(v ~T0 @X0 1 ef ]
 {
-[; ;ringbuffer.c: 27: uint8_t ringbufferSize(struct ringbuffer *rb) {
-[e :U _ringbufferSize ]
-[v _rb `*S354 ~T0 @X0 1 r1 ]
+[; ;main.c: 80: void initTMR4(void) {
+[e :U _initTMR4 ]
 [f ]
-[; ;ringbuffer.c: 28: return 48;
-"28
-[e ) -> -> 48 `i `uc ]
-[e $UE 358  ]
-[; ;ringbuffer.c: 29: }
-"29
-[e :UE 358 ]
+[; ;main.c: 81: TMR4 = 0x00;
+"81
+[e = _TMR4 -> -> 0 `i `uc ]
+[; ;main.c: 82: PR4 = 0xff;
+"82
+[e = _PR4 -> -> 255 `i `uc ]
+[; ;main.c: 83: T4CON = 0b01110111;
+"83
+[e = _T4CON -> -> 119 `i `uc ]
+[; ;main.c: 84: TMR4IF = 0;
+"84
+[e = _TMR4IF -> -> 0 `i `b ]
+[; ;main.c: 85: }
+"85
+[e :UE 361 ]
 }
-"31
-[v _ringbufferPut `(uc ~T0 @X0 1 ef2`*S354`uc ]
+"87
+[v _initTMR6 `(v ~T0 @X0 1 ef ]
 {
-[; ;ringbuffer.c: 31: uint8_t ringbufferPut(struct ringbuffer *rb, uint8_t dat) {
-[e :U _ringbufferPut ]
-[v _rb `*S354 ~T0 @X0 1 r1 ]
-[v _dat `uc ~T0 @X0 1 r2 ]
+[; ;main.c: 87: void initTMR6(void) {
+[e :U _initTMR6 ]
 [f ]
-[; ;ringbuffer.c: 37: if ((rb->pp >= rb->gp || rb->pp < rb->gp - 1) && (rb->pp != ringbufferSize(rb) - 1 || rb->gp != 0)) {
-"37
-[e $ ! && || >= -> . *U _rb 0 `i -> . *U _rb 1 `i < -> . *U _rb 0 `i - -> . *U _rb 1 `i -> 1 `i || != -> . *U _rb 0 `i - -> ( _ringbufferSize (1 _rb `i -> 1 `i != -> . *U _rb 1 `i -> 0 `i 360  ]
-{
-[; ;ringbuffer.c: 38: rb->dat[rb->pp] = dat;
-"38
-[e = *U + &U . *U _rb 2 * -> . *U _rb 0 `ux -> -> # *U &U . *U _rb 2 `ui `ux _dat ]
-[; ;ringbuffer.c: 39: rb->pp += 1;
-"39
-[e =+ . *U _rb 0 -> -> 1 `i `uc ]
-[; ;ringbuffer.c: 40: if (rb->pp == ringbufferSize(rb))
-"40
-[e $ ! == -> . *U _rb 0 `i -> ( _ringbufferSize (1 _rb `i 361  ]
-[; ;ringbuffer.c: 41: rb->pp = 0;
-"41
-[e = . *U _rb 0 -> -> 0 `i `uc ]
-[e :U 361 ]
-[; ;ringbuffer.c: 42: return 0;
-"42
-[e ) -> -> 0 `i `uc ]
-[e $UE 359  ]
-"43
-}
-[e :U 360 ]
-[; ;ringbuffer.c: 43: }
-[; ;ringbuffer.c: 44: return 1;
-"44
-[e ) -> -> 1 `i `uc ]
-[e $UE 359  ]
-[; ;ringbuffer.c: 45: }
-"45
-[e :UE 359 ]
-}
-"47
-[v _ringbufferGet `(i ~T0 @X0 1 ef1`*S354 ]
-{
-[; ;ringbuffer.c: 47: int16_t ringbufferGet(struct ringbuffer *rb) {
-[e :U _ringbufferGet ]
-[v _rb `*S354 ~T0 @X0 1 r1 ]
-[f ]
-"48
-[v _ret `i ~T0 @X0 1 a ]
-[; ;ringbuffer.c: 48: int16_t ret = -1;
-[e = _ret -U -> 1 `i ]
-[; ;ringbuffer.c: 49: if (rb->gp < rb->pp || rb->gp > rb->pp) {
-"49
-[e $ ! || < -> . *U _rb 1 `i -> . *U _rb 0 `i > -> . *U _rb 1 `i -> . *U _rb 0 `i 363  ]
-{
-[; ;ringbuffer.c: 50: ret = rb->dat[rb->gp];
-"50
-[e = _ret -> *U + &U . *U _rb 2 * -> . *U _rb 1 `ux -> -> # *U &U . *U _rb 2 `ui `ux `i ]
-[; ;ringbuffer.c: 51: rb->gp += 1;
-"51
-[e =+ . *U _rb 1 -> -> 1 `i `uc ]
-[; ;ringbuffer.c: 52: if (rb->gp == ringbufferSize(rb))
-"52
-[e $ ! == -> . *U _rb 1 `i -> ( _ringbufferSize (1 _rb `i 364  ]
-[; ;ringbuffer.c: 53: rb->gp = 0;
-"53
-[e = . *U _rb 1 -> -> 0 `i `uc ]
-[e :U 364 ]
-"54
-}
-[e :U 363 ]
-[; ;ringbuffer.c: 54: }
-[; ;ringbuffer.c: 56: return ret;
-"56
-[e ) _ret ]
-[e $UE 362  ]
-[; ;ringbuffer.c: 58: }
-"58
+[; ;main.c: 89: PR6 = 0xff;
+"89
+[e = _PR6 -> -> 255 `i `uc ]
+[; ;main.c: 90: T6CON = 0b111;
+"90
+[e = _T6CON -> -> 7 `i `uc ]
+[; ;main.c: 91: TMR6IF = 0;
+"91
+[e = _TMR6IF -> -> 0 `i `b ]
+[; ;main.c: 92: }
+"92
 [e :UE 362 ]
+}
+"94
+[v _initADC `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 94: void initADC(void) {
+[e :U _initADC ]
+[f ]
+[; ;main.c: 95: ADCON0 = 0;
+"95
+[e = _ADCON0 -> -> 0 `i `uc ]
+[; ;main.c: 96: ADCON1 = 0;
+"96
+[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;main.c: 98: ADCON0 |= 8 << 2;
+"98
+[e =| _ADCON0 -> << -> 8 `i -> 2 `i `uc ]
+[; ;main.c: 99: ADCON1 |= 0 << 7;
+"99
+[e =| _ADCON1 -> << -> 0 `i -> 7 `i `uc ]
+[; ;main.c: 100: ADCON1 |= 000 << 4;
+"100
+[e =| _ADCON1 -> << -> 0 `i -> 4 `i `uc ]
+[; ;main.c: 101: ADCON1 |= 0 << 2;
+"101
+[e =| _ADCON1 -> << -> 0 `i -> 2 `i `uc ]
+[; ;main.c: 102: ADCON1 |= 0;
+"102
+[e =| _ADCON1 -> -> 0 `i `uc ]
+[; ;main.c: 103: }
+"103
+[e :UE 363 ]
+}
+"105
+[v _setDutyPWM1 `(v ~T0 @X0 1 ef1`ui ]
+{
+[; ;main.c: 105: void setDutyPWM1(uint16_t duty) {
+[e :U _setDutyPWM1 ]
+[v _duty `ui ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 112: if (duty > 0x03ff)
+"112
+[e $ ! > _duty -> -> 1023 `i `ui 365  ]
+[; ;main.c: 113: duty = 0x03ff;
+"113
+[e = _duty -> -> 1023 `i `ui ]
+[e :U 365 ]
+[; ;main.c: 116: CCP1CON &= ~0b00110000;
+"116
+[e =& _CCP1CON -> ~ -> 48 `i `uc ]
+[; ;main.c: 117: CCP1CON |= (duty & 0x02) << 4 ;
+"117
+[e =| _CCP1CON -> << & _duty -> -> 2 `i `ui -> 4 `i `uc ]
+[; ;main.c: 118: CCPR1L = (uint8_t) (duty >> 2);
+"118
+[e = _CCPR1L -> >> _duty -> 2 `i `uc ]
+[; ;main.c: 119: }
+"119
+[e :UE 364 ]
+}
+"122
+[v _initPWM1 `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 122: void initPWM1(void) {
+[e :U _initPWM1 ]
+[f ]
+[; ;main.c: 124: TRISB |= 1 << 3;
+"124
+[e =| _TRISB -> << -> 1 `i -> 3 `i `uc ]
+[; ;main.c: 125: CCP1CON = 0b00001100;
+"125
+[e = _CCP1CON -> -> 12 `i `uc ]
+[; ;main.c: 126: setDutyPWM1(0);
+"126
+[e ( _setDutyPWM1 (1 -> -> 0 `i `ui ]
+[; ;main.c: 127: CCPTMRS |= 0x02 << 0;
+"127
+[e =| _CCPTMRS -> << -> 2 `i -> 0 `i `uc ]
+[; ;main.c: 128: TMR6IF = 0;
+"128
+[e = _TMR6IF -> -> 0 `i `b ]
+[; ;main.c: 129: while(!TMR6IF);
+"129
+[e $U 367  ]
+[e :U 368 ]
+[e :U 367 ]
+[e $ ! _TMR6IF 368  ]
+[e :U 369 ]
+[; ;main.c: 130: TRISB &= ~(1 << 3);
+"130
+[e =& _TRISB -> ~ << -> 1 `i -> 3 `i `uc ]
+[; ;main.c: 131: }
+"131
+[e :UE 366 ]
+}
+"133
+[v _setDutyPWM2 `(v ~T0 @X0 1 ef1`ui ]
+{
+[; ;main.c: 133: void setDutyPWM2(uint16_t duty) {
+[e :U _setDutyPWM2 ]
+[v _duty `ui ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 140: if (duty > 0x03ff)
+"140
+[e $ ! > _duty -> -> 1023 `i `ui 371  ]
+[; ;main.c: 141: duty = 0x03ff;
+"141
+[e = _duty -> -> 1023 `i `ui ]
+[e :U 371 ]
+[; ;main.c: 144: CCP2CON &= ~0b00110000;
+"144
+[e =& _CCP2CON -> ~ -> 48 `i `uc ]
+[; ;main.c: 145: CCP2CON |= (duty & 0x02) << 4 ;
+"145
+[e =| _CCP2CON -> << & _duty -> -> 2 `i `ui -> 4 `i `uc ]
+[; ;main.c: 146: CCPR2L = (uint8_t) (duty >> 2);
+"146
+[e = _CCPR2L -> >> _duty -> 2 `i `uc ]
+[; ;main.c: 147: }
+"147
+[e :UE 370 ]
+}
+"150
+[v _initPWM2 `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 150: void initPWM2(void) {
+[e :U _initPWM2 ]
+[f ]
+[; ;main.c: 152: CCP2SEL = 1;
+"152
+[e = _CCP2SEL -> -> 1 `i `b ]
+[; ;main.c: 153: TRISA |= 1 << 7;
+"153
+[e =| _TRISA -> << -> 1 `i -> 7 `i `uc ]
+[; ;main.c: 154: CCP2CON = 0b00001100;
+"154
+[e = _CCP2CON -> -> 12 `i `uc ]
+[; ;main.c: 155: setDutyPWM2(0);
+"155
+[e ( _setDutyPWM2 (1 -> -> 0 `i `ui ]
+[; ;main.c: 156: CCPTMRS |= 0x02 << 2;
+"156
+[e =| _CCPTMRS -> << -> 2 `i -> 2 `i `uc ]
+[; ;main.c: 157: TMR6IF = 0;
+"157
+[e = _TMR6IF -> -> 0 `i `b ]
+[; ;main.c: 158: while(!TMR6IF);
+"158
+[e $U 373  ]
+[e :U 374 ]
+[e :U 373 ]
+[e $ ! _TMR6IF 374  ]
+[e :U 375 ]
+[; ;main.c: 159: TRISA &= ~(1 << 7);
+"159
+[e =& _TRISA -> ~ << -> 1 `i -> 7 `i `uc ]
+[; ;main.c: 160: }
+"160
+[e :UE 372 ]
+}
+"162
+[v _setDutyPWM3 `(v ~T0 @X0 1 ef1`ui ]
+{
+[; ;main.c: 162: void setDutyPWM3(uint16_t duty) {
+[e :U _setDutyPWM3 ]
+[v _duty `ui ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 169: if (duty > 0x03ff)
+"169
+[e $ ! > _duty -> -> 1023 `i `ui 377  ]
+[; ;main.c: 170: duty = 0x03ff;
+"170
+[e = _duty -> -> 1023 `i `ui ]
+[e :U 377 ]
+[; ;main.c: 173: CCP3CON &= ~0b00110000;
+"173
+[e =& _CCP3CON -> ~ -> 48 `i `uc ]
+[; ;main.c: 174: CCP3CON |= (duty & 0x02) << 4 ;
+"174
+[e =| _CCP3CON -> << & _duty -> -> 2 `i `ui -> 4 `i `uc ]
+[; ;main.c: 175: CCPR3L = (uint8_t) (duty >> 2);
+"175
+[e = _CCPR3L -> >> _duty -> 2 `i `uc ]
+[; ;main.c: 176: }
+"176
+[e :UE 376 ]
+}
+"179
+[v _initPWM3 `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 179: void initPWM3(void) {
+[e :U _initPWM3 ]
+[f ]
+[; ;main.c: 181: TRISA |= 1 << 3;
+"181
+[e =| _TRISA -> << -> 1 `i -> 3 `i `uc ]
+[; ;main.c: 182: CCP3CON = 0b00001100;
+"182
+[e = _CCP3CON -> -> 12 `i `uc ]
+[; ;main.c: 183: setDutyPWM3(0);
+"183
+[e ( _setDutyPWM3 (1 -> -> 0 `i `ui ]
+[; ;main.c: 184: CCPTMRS |= 0x02 << 4;
+"184
+[e =| _CCPTMRS -> << -> 2 `i -> 4 `i `uc ]
+[; ;main.c: 185: TMR6IF = 0;
+"185
+[e = _TMR6IF -> -> 0 `i `b ]
+[; ;main.c: 186: while(!TMR6IF);
+"186
+[e $U 379  ]
+[e :U 380 ]
+[e :U 379 ]
+[e $ ! _TMR6IF 380  ]
+[e :U 381 ]
+[; ;main.c: 187: TRISA &= ~(1 << 3);
+"187
+[e =& _TRISA -> ~ << -> 1 `i -> 3 `i `uc ]
+[; ;main.c: 188: }
+"188
+[e :UE 378 ]
+}
+"190
+[v _setDutyPWM4 `(v ~T0 @X0 1 ef1`ui ]
+{
+[; ;main.c: 190: void setDutyPWM4(uint16_t duty) {
+[e :U _setDutyPWM4 ]
+[v _duty `ui ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 197: if (duty > 0x03ff)
+"197
+[e $ ! > _duty -> -> 1023 `i `ui 383  ]
+[; ;main.c: 198: duty = 0x03ff;
+"198
+[e = _duty -> -> 1023 `i `ui ]
+[e :U 383 ]
+[; ;main.c: 201: CCP4CON &= ~0b00110000;
+"201
+[e =& _CCP4CON -> ~ -> 48 `i `uc ]
+[; ;main.c: 202: CCP4CON |= (duty & 0x02) << 4 ;
+"202
+[e =| _CCP4CON -> << & _duty -> -> 2 `i `ui -> 4 `i `uc ]
+[; ;main.c: 203: CCPR4L = (uint8_t) (duty >> 2);
+"203
+[e = _CCPR4L -> >> _duty -> 2 `i `uc ]
+[; ;main.c: 204: }
+"204
+[e :UE 382 ]
+}
+"207
+[v _initPWM4 `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 207: void initPWM4(void) {
+[e :U _initPWM4 ]
+[f ]
+[; ;main.c: 209: TRISA |= 1 << 4;
+"209
+[e =| _TRISA -> << -> 1 `i -> 4 `i `uc ]
+[; ;main.c: 210: CCP4CON = 0b00001100;
+"210
+[e = _CCP4CON -> -> 12 `i `uc ]
+[; ;main.c: 211: setDutyPWM3(0);
+"211
+[e ( _setDutyPWM3 (1 -> -> 0 `i `ui ]
+[; ;main.c: 212: CCPTMRS |= 0x02 << 6;
+"212
+[e =| _CCPTMRS -> << -> 2 `i -> 6 `i `uc ]
+[; ;main.c: 213: TMR6IF = 0;
+"213
+[e = _TMR6IF -> -> 0 `i `b ]
+[; ;main.c: 214: while(!TMR6IF);
+"214
+[e $U 385  ]
+[e :U 386 ]
+[e :U 385 ]
+[e $ ! _TMR6IF 386  ]
+[e :U 387 ]
+[; ;main.c: 215: TRISA &= ~(1 << 4);
+"215
+[e =& _TRISA -> ~ << -> 1 `i -> 4 `i `uc ]
+[; ;main.c: 216: }
+"216
+[e :UE 384 ]
+}
+"218
+[v _initInt `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 218: void initInt(void) {
+[e :U _initInt ]
+[f ]
+[; ;main.c: 219: TMR4IE = 1;
+"219
+[e = _TMR4IE -> -> 1 `i `b ]
+[; ;main.c: 220: RCIE = 1;
+"220
+[e = _RCIE -> -> 1 `i `b ]
+[; ;main.c: 221: PEIE = 1;
+"221
+[e = _PEIE -> -> 1 `i `b ]
+[; ;main.c: 222: GIE = 1;
+"222
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 223: }
+"223
+[e :UE 388 ]
+}
+"225
+[v _putc `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;main.c: 225: void putc(char c) {
+[e :U _putc ]
+[v _c `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 226: while(!TRMT);
+"226
+[e $U 390  ]
+[e :U 391 ]
+[e :U 390 ]
+[e $ ! _TRMT 391  ]
+[e :U 392 ]
+[; ;main.c: 227: TXREG = c;
+"227
+[e = _TXREG _c ]
+[; ;main.c: 228: __nop();
+"228
+[e ( ___nop ..  ]
+[; ;main.c: 229: }
+"229
+[e :UE 389 ]
+}
+"231
+[v _putstr `(v ~T0 @X0 1 ef1`*Cuc ]
+{
+[; ;main.c: 231: void putstr(const char *c) {
+[e :U _putstr ]
+[v _c `*Cuc ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 232: while (*c) {
+"232
+[e $U 394  ]
+[e :U 395 ]
+{
+[; ;main.c: 233: putc(*c);
+"233
+[e ( _putc (1 *U _c ]
+[; ;main.c: 234: c++;
+"234
+[e ++ _c * -> -> 1 `i `x -> -> # *U _c `i `x ]
+"235
+}
+[e :U 394 ]
+"232
+[e $ != -> *U _c `i -> -> -> 0 `i `Cuc `i 395  ]
+[e :U 396 ]
+[; ;main.c: 235: }
+[; ;main.c: 236: }
+"236
+[e :UE 393 ]
+}
+[v F2981 `(uc ~T0 @X0 1 tf2`uc`uc ]
+"238
+[v _getPicAddr `TF2981 ~T0 @X0 1 e ]
+{
+[; ;main.c: 238: inline uint8_t getPicAddr(uint8_t d0, uint8_t d1) {
+[e :U _getPicAddr ]
+[v _d0 `uc ~T0 @X0 1 r1 ]
+[v _d1 `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;main.c: 239: return (d0 >> 5) & 0b00000011;
+"239
+[e ) -> & >> -> _d0 `i -> 5 `i -> 3 `i `uc ]
+[e $UE 397  ]
+[; ;main.c: 240: }
+"240
+[e :UE 397 ]
+}
+[v F2985 `(uc ~T0 @X0 1 tf2`uc`uc ]
+"242
+[v _getSAddr `TF2985 ~T0 @X0 1 e ]
+{
+[; ;main.c: 242: inline uint8_t getSAddr(uint8_t d0, uint8_t d1) {
+[e :U _getSAddr ]
+[v _d0 `uc ~T0 @X0 1 r1 ]
+[v _d1 `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;main.c: 243: return (d0 >> 3) & 0b00000011;
+"243
+[e ) -> & >> -> _d0 `i -> 3 `i -> 3 `i `uc ]
+[e $UE 398  ]
+[; ;main.c: 244: }
+"244
+[e :UE 398 ]
+}
+[v F2989 `(uc ~T0 @X0 1 tf2`uc`uc ]
+"246
+[v _getMode `TF2989 ~T0 @X0 1 e ]
+{
+[; ;main.c: 246: inline uint8_t getMode(uint8_t d0, uint8_t d1) {
+[e :U _getMode ]
+[v _d0 `uc ~T0 @X0 1 r1 ]
+[v _d1 `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;main.c: 247: return (d0 >> 1) & 0b00000011;
+"247
+[e ) -> & >> -> _d0 `i -> 1 `i -> 3 `i `uc ]
+[e $UE 399  ]
+[; ;main.c: 248: }
+"248
+[e :UE 399 ]
+}
+[v F2993 `(uc ~T0 @X0 1 tf2`uc`uc ]
+"250
+[v _getData `TF2993 ~T0 @X0 1 e ]
+{
+[; ;main.c: 250: inline uint8_t getData(uint8_t d0, uint8_t d1) {
+[e :U _getData ]
+[v _d0 `uc ~T0 @X0 1 r1 ]
+[v _d1 `uc ~T0 @X0 1 r2 ]
+[f ]
+"251
+[v _ret `uc ~T0 @X0 1 a ]
+[; ;main.c: 251: uint8_t ret = 0;
+[e = _ret -> -> 0 `i `uc ]
+[; ;main.c: 252: ret |= (d0 & 0b00000001) << 7;
+"252
+[e =| _ret -> << & -> _d0 `i -> 1 `i -> 7 `i `uc ]
+[; ;main.c: 253: ret |= (d1 & 0b01111111);
+"253
+[e =| _ret -> & -> _d1 `i -> 127 `i `uc ]
+[; ;main.c: 254: return ret;
+"254
+[e ) _ret ]
+[e $UE 400  ]
+[; ;main.c: 255: }
+"255
+[e :UE 400 ]
+}
+[v F2998 `(v ~T0 @X0 1 tf2`uc`uc ]
+"257
+[v _setServo `TF2998 ~T0 @X0 1 e ]
+{
+[; ;main.c: 257: inline void setServo(uint8_t id, uint8_t val) {
+[e :U _setServo ]
+[v _id `uc ~T0 @X0 1 r1 ]
+[v _val `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;main.c: 258: switch (id) {
+"258
+[e $U 403  ]
+{
+[; ;main.c: 259: case 0:
+"259
+[e :U 404 ]
+[; ;main.c: 260: setDutyPWM1(val);
+"260
+[e ( _setDutyPWM1 (1 -> _val `ui ]
+[; ;main.c: 261: break;
+"261
+[e $U 402  ]
+[; ;main.c: 262: case 1:
+"262
+[e :U 405 ]
+[; ;main.c: 263: setDutyPWM2(val);
+"263
+[e ( _setDutyPWM2 (1 -> _val `ui ]
+[; ;main.c: 264: break;
+"264
+[e $U 402  ]
+[; ;main.c: 265: case 2:
+"265
+[e :U 406 ]
+[; ;main.c: 266: setDutyPWM3(val);
+"266
+[e ( _setDutyPWM3 (1 -> _val `ui ]
+[; ;main.c: 267: break;
+"267
+[e $U 402  ]
+[; ;main.c: 268: case 3:
+"268
+[e :U 407 ]
+[; ;main.c: 269: setDutyPWM4(val);
+"269
+[e ( _setDutyPWM4 (1 -> _val `ui ]
+[; ;main.c: 270: break;
+"270
+[e $U 402  ]
+"271
+}
+[; ;main.c: 271: }
+[e $U 402  ]
+"258
+[e :U 403 ]
+[e [\ _id , $ -> -> 0 `i `uc 404
+ , $ -> -> 1 `i `uc 405
+ , $ -> -> 2 `i `uc 406
+ , $ -> -> 3 `i `uc 407
+ 402 ]
+"271
+[e :U 402 ]
+[; ;main.c: 272: }
+"272
+[e :UE 401 ]
+}
+[v F3001 `(v ~T0 @X0 1 tf ]
+"274
+[v _ISR `IF3001 ~T0 @X0 1 e ]
+{
+[; ;main.c: 274: void interrupt ISR(void) {
+[e :U _ISR ]
+[f ]
+[; ;main.c: 278: if (RCIE && RCIF) {
+"278
+[e $ ! && _RCIE _RCIF 409  ]
+{
+[; ;main.c: 282: if (dat0 == -1) {
+"282
+[e $ ! == _dat0 -> -U -> 1 `i `ui 410  ]
+{
+[; ;main.c: 283: dat0 = RCREG;
+"283
+[e = _dat0 -> _RCREG `ui ]
+[; ;main.c: 284: if (!(dat0 & 0b10000000)) {
+"284
+[e $ ! ! != & _dat0 -> -> 128 `i `ui -> -> 0 `i `Vui 411  ]
+{
+[; ;main.c: 285: dat0 = -1;
+"285
+[e = _dat0 -> -U -> 1 `i `ui ]
+"286
+}
+[; ;main.c: 286: } else if (getPicAddr((uint8_t) (dat0 & 0xff), (uint8_t) (dat1 & 0xff)) != 1) {
+[e $U 412  ]
+[e :U 411 ]
+[e $ ! != -> ( _getPicAddr (2 , -> & _dat0 -> -> 255 `i `ui `uc -> & _dat1 -> -> 255 `i `ui `uc `i -> 1 `i 413  ]
+{
+[; ;main.c: 287: dat0 = -1;
+"287
+[e = _dat0 -> -U -> 1 `i `ui ]
+"288
+}
+[e :U 413 ]
+"289
+[e :U 412 ]
+}
+[; ;main.c: 288: }
+[; ;main.c: 289: } else if (dat1 == -1) {
+[e $U 414  ]
+[e :U 410 ]
+[e $ ! == _dat1 -> -U -> 1 `i `ui 415  ]
+{
+[; ;main.c: 290: dat1 = RCREG;
+"290
+[e = _dat1 -> _RCREG `ui ]
+[; ;main.c: 291: setServo(getSAddr((uint8_t) (dat0 & 0xff), (uint8_t) (dat1 & 0xff)), getData((uint8_t) (dat0 & 0xff), (uint8_t) (dat1 & 0xff)));
+"291
+[e ( _setServo (2 , ( _getSAddr (2 , -> & _dat0 -> -> 255 `i `ui `uc -> & _dat1 -> -> 255 `i `ui `uc ( _getData (2 , -> & _dat0 -> -> 255 `i `ui `uc -> & _dat1 -> -> 255 `i `ui `uc ]
+[; ;main.c: 292: dat0 = dat1 = -1;
+"292
+[e = _dat0 = _dat1 -> -U -> 1 `i `ui ]
+"293
+}
+[e :U 415 ]
+"294
+[e :U 414 ]
+[; ;main.c: 293: }
+[; ;main.c: 294: RCIF = 0;
+[e = _RCIF -> -> 0 `i `b ]
+"295
+}
+[e :U 409 ]
+[; ;main.c: 295: }
+[; ;main.c: 296: if (TMR4IF) {
+"296
+[e $ ! _TMR4IF 416  ]
+{
+[; ;main.c: 300: cycle_adc++;
+"300
+[e ++ _cycle_adc -> -> 1 `i `uc ]
+[; ;main.c: 301: cycle_timeout++;
+"301
+[e ++ _cycle_timeout -> -> 1 `i `uc ]
+[; ;main.c: 302: TMR4IF = 0;
+"302
+[e = _TMR4IF -> -> 0 `i `b ]
+"303
+}
+[e :U 416 ]
+[; ;main.c: 303: }
+[; ;main.c: 307: }
+"307
+[e :UE 408 ]
+}
+"309
+[v _main `(i ~T0 @X0 1 ef ]
+{
+[; ;main.c: 309: int main(void) {
+[e :U _main ]
+[f ]
+"310
+[v _adc_val `uc ~T0 @X0 1 a ]
+"311
+[v _buf `uc ~T0 @X0 1 a ]
+[; ;main.c: 310: uint8_t adc_val;
+[; ;main.c: 311: uint8_t buf;
+[; ;main.c: 312: initFrequency();
+"312
+[e ( _initFrequency ..  ]
+[; ;main.c: 313: initRegisters();
+"313
+[e ( _initRegisters ..  ]
+[; ;main.c: 314: initVariables();
+"314
+[e ( _initVariables ..  ]
+[; ;main.c: 315: initUART();
+"315
+[e ( _initUART ..  ]
+[; ;main.c: 316: initTMR4();
+"316
+[e ( _initTMR4 ..  ]
+[; ;main.c: 317: initTMR6();
+"317
+[e ( _initTMR6 ..  ]
+[; ;main.c: 318: initADC();
+"318
+[e ( _initADC ..  ]
+[; ;main.c: 319: initPWM1();
+"319
+[e ( _initPWM1 ..  ]
+[; ;main.c: 320: initPWM2();
+"320
+[e ( _initPWM2 ..  ]
+[; ;main.c: 321: initPWM3();
+"321
+[e ( _initPWM3 ..  ]
+[; ;main.c: 322: initPWM4();
+"322
+[e ( _initPWM4 ..  ]
+[; ;main.c: 323: setDutyPWM1(0);
+"323
+[e ( _setDutyPWM1 (1 -> -> 0 `i `ui ]
+[; ;main.c: 324: setDutyPWM2(0);
+"324
+[e ( _setDutyPWM2 (1 -> -> 0 `i `ui ]
+[; ;main.c: 325: setDutyPWM3(0);
+"325
+[e ( _setDutyPWM3 (1 -> -> 0 `i `ui ]
+[; ;main.c: 326: setDutyPWM4(0);
+"326
+[e ( _setDutyPWM4 (1 -> -> 0 `i `ui ]
+[; ;main.c: 327: initInt();
+"327
+[e ( _initInt ..  ]
+[; ;main.c: 329: while (1) {
+"329
+[e :U 419 ]
+{
+[; ;main.c: 330: if (cycle_adc == 0x0a) {
+"330
+[e $ ! == -> _cycle_adc `i -> 10 `i 421  ]
+{
+[; ;main.c: 332: ADON = 1;
+"332
+[e = _ADON -> -> 1 `i `b ]
+[; ;main.c: 333: _delay((unsigned long)((10)*(4000000/4000.0)));
+"333
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 334: GO_nDONE = 1;
+"334
+[e = _GO_nDONE -> -> 1 `i `b ]
+[; ;main.c: 335: while (GO_nDONE);
+"335
+[e $U 422  ]
+[e :U 423 ]
+[e :U 422 ]
+[e $ _GO_nDONE 423  ]
+[e :U 424 ]
+[; ;main.c: 336: adc_val = ADRESH;
+"336
+[e = _adc_val _ADRESH ]
+[; ;main.c: 337: ADON = 0;
+"337
+[e = _ADON -> -> 0 `i `b ]
+[; ;main.c: 339: putc('>');
+"339
+[e ( _putc (1 -> -> 62 `ui `uc ]
+[; ;main.c: 340: buf = (adc_val >> 4) & 0x0f;
+"340
+[e = _buf -> & >> -> _adc_val `i -> 4 `i -> 15 `i `uc ]
+[; ;main.c: 341: if (buf >= 0x0a)
+"341
+[e $ ! >= -> _buf `i -> 10 `i 425  ]
+[; ;main.c: 342: buf += 'a' - 0x0a;
+"342
+[e =+ _buf -> - -> 97 `ui -> -> 10 `i `ui `uc ]
+[e $U 426  ]
+"343
+[e :U 425 ]
+[; ;main.c: 343: else
+[; ;main.c: 344: buf += '0';
+"344
+[e =+ _buf -> -> 48 `ui `uc ]
+[e :U 426 ]
+[; ;main.c: 345: putc(buf);
+"345
+[e ( _putc (1 _buf ]
+[; ;main.c: 346: buf = adc_val & 0x0f;
+"346
+[e = _buf -> & -> _adc_val `i -> 15 `i `uc ]
+[; ;main.c: 347: if (buf >= 0x0a)
+"347
+[e $ ! >= -> _buf `i -> 10 `i 427  ]
+[; ;main.c: 348: buf += 'a' - 0x0a;
+"348
+[e =+ _buf -> - -> 97 `ui -> -> 10 `i `ui `uc ]
+[e $U 428  ]
+"349
+[e :U 427 ]
+[; ;main.c: 349: else
+[; ;main.c: 350: buf += '0';
+"350
+[e =+ _buf -> -> 48 `ui `uc ]
+[e :U 428 ]
+[; ;main.c: 351: putc(buf);
+"351
+[e ( _putc (1 _buf ]
+[; ;main.c: 352: putc('h');
+"352
+[e ( _putc (1 -> -> 104 `ui `uc ]
+[; ;main.c: 353: putc('<');
+"353
+[e ( _putc (1 -> -> 60 `ui `uc ]
+[; ;main.c: 355: cycle_adc = 0;
+"355
+[e = _cycle_adc -> -> 0 `i `uc ]
+"356
+}
+[e :U 421 ]
+[; ;main.c: 356: }
+[; ;main.c: 357: if (cycle_timeout == 0xff) {
+"357
+[e $ ! == -> _cycle_timeout `i -> 255 `i 429  ]
+{
+[; ;main.c: 359: setDutyPWM1(0);
+"359
+[e ( _setDutyPWM1 (1 -> -> 0 `i `ui ]
+[; ;main.c: 360: setDutyPWM2(0);
+"360
+[e ( _setDutyPWM2 (1 -> -> 0 `i `ui ]
+[; ;main.c: 361: setDutyPWM3(0);
+"361
+[e ( _setDutyPWM3 (1 -> -> 0 `i `ui ]
+[; ;main.c: 362: setDutyPWM4(0);
+"362
+[e ( _setDutyPWM4 (1 -> -> 0 `i `ui ]
+[; ;main.c: 364: cycle_timeout = 0;
+"364
+[e = _cycle_timeout -> -> 0 `i `uc ]
+"365
+}
+[e :U 429 ]
+"366
+}
+[e :U 418 ]
+"329
+[e $U 419  ]
+[e :U 420 ]
+[; ;main.c: 365: }
+[; ;main.c: 366: }
+[; ;main.c: 367: }
+"367
+[e :UE 417 ]
 }

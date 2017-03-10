@@ -45,15 +45,16 @@
 #include <xc.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include "stdfc.h"
-#include "ringbuffer.h"
 
 /******************************************************************************/
 /* MACROS *********************************************************************/
 /******************************************************************************/
+//#define DEBUG               1
+
 #define _XTAL_FREQ          4000000
 
 #define BDEVID              1
+#define BAUDRATE            115200 // or 9600
 
 #define ARGBUFFLEN          (8+1)
 #define STATUS_READING      0x01
@@ -74,22 +75,16 @@
 #define PWM_MID             96      //  90 deg  pi/2 rad
 #define PWM_MAX             157     // 180 deg    pi rad
 
-#define USE_PWM_LOCK
+//#define USE_PWM_LOCK
 
 /******************************************************************************/
 /* PUBLIC VARS ****************************************************************/
 /******************************************************************************/
-struct ringbuffer uart_rec_buff_;
-struct ringbuffer *uart_rec_buff;
-uint8_t cmdbuff[ARGBUFFLEN];        //holds the command string
-uint8_t arg0buff[ARGBUFFLEN];       //holds the first argument
-uint8_t arg1buff[ARGBUFFLEN];       //holds the second argument
-uint8_t status;                     //status of the command validation
-uint8_t usestr;                     //the strings to use for the command
-                                    // 0: none
-                                    // 1: cmdbuff
-                                    // 2: +arg0buff
-                                    // 3: +arg1buff
+volatile uint16_t dat0;
+volatile uint16_t dat1;
+volatile uint8_t cycle_adc;
+volatile uint8_t cycle_timeout;
+
 /******************************************************************************/
 /* FUNCTION PROTOTYPES ********************************************************/
 /******************************************************************************/

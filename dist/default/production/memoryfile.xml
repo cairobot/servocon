@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production/CAiRO-servocon.X.production.hex">
+  <executable name="dist/default/production/servocon.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>4096</length>
-      <used>945</used>
-      <free>3151</free>
+      <used>932</used>
+      <free>3164</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>384</length>
-      <used>110</used>
-      <free>274</free>
+      <used>30</used>
+      <free>354</free>
     </memory>
   </executable>
 </project>

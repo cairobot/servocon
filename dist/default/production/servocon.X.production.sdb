@@ -3,80 +3,64 @@
 [d edition pro ]
 [d chip 16F1827 ]
 [d frameptr 6 ]
-"6 /Applications/microchip/xc8/v1.37/sources/common/aldiv.c
-[v ___aldiv __aldiv `(l  1 e 4 0 ]
-"5 /Applications/microchip/xc8/v1.37/sources/common/almod.c
-[v ___almod __almod `(l  1 e 4 0 ]
-"6 /Applications/microchip/xc8/v1.37/sources/common/awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "62 /Applications/microchip/xc8/v1.37/sources/common/float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 /Applications/microchip/xc8/v1.37/sources/common/ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"15 /Applications/microchip/xc8/v1.37/sources/common/Umul32.c
-[v ___lmul __lmul `(ul  1 e 4 0 ]
 "6 /Applications/microchip/xc8/v1.37/sources/pic/eeprom.c
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"17 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/main_base.c
+"17 /Users/redxef/Documents/Programming/CAiRO/servocon.X/main.c
 [v _initFrequency initFrequency `(v  1 e 1 0 ]
 "35
 [v _initRegisters initRegisters `(v  1 e 1 0 ]
 "48
 [v _initVariables initVariables `(v  1 e 1 0 ]
-"57
+"55
 [v _initUART initUART `(v  1 e 1 0 ]
-"76
+"80
+[v _initTMR4 initTMR4 `(v  1 e 1 0 ]
+"87
 [v _initTMR6 initTMR6 `(v  1 e 1 0 ]
-"84
+"94
+[v _initADC initADC `(v  1 e 1 0 ]
+"105
 [v _setDutyPWM1 setDutyPWM1 `(v  1 e 1 0 ]
 [v i1_setDutyPWM1 setDutyPWM1 `(v  1 e 1 0 ]
-"101
+"122
 [v _initPWM1 initPWM1 `(v  1 e 1 0 ]
-"112
+"133
 [v _setDutyPWM2 setDutyPWM2 `(v  1 e 1 0 ]
 [v i1_setDutyPWM2 setDutyPWM2 `(v  1 e 1 0 ]
-"129
+"150
 [v _initPWM2 initPWM2 `(v  1 e 1 0 ]
-"141
+"162
 [v _setDutyPWM3 setDutyPWM3 `(v  1 e 1 0 ]
 [v i1_setDutyPWM3 setDutyPWM3 `(v  1 e 1 0 ]
-"158
+"179
 [v _initPWM3 initPWM3 `(v  1 e 1 0 ]
-"169
+"190
 [v _setDutyPWM4 setDutyPWM4 `(v  1 e 1 0 ]
 [v i1_setDutyPWM4 setDutyPWM4 `(v  1 e 1 0 ]
-"186
+"207
 [v _initPWM4 initPWM4 `(v  1 e 1 0 ]
-"197
+"218
 [v _initInt initInt `(v  1 e 1 0 ]
-"204
+"225
 [v _putc putc `(v  1 e 1 0 ]
-"16 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/main_v_1_0.c
+"238
 [v _getPicAddr getPicAddr `T(uc  1 e 1 0 ]
-"20
+"242
 [v _getSAddr getSAddr `T(uc  1 e 1 0 ]
-"28
+"250
 [v _getData getData `T(uc  1 e 1 0 ]
-"35
+"257
 [v _setServo setServo `T(v  1 e 1 0 ]
-"52
+"274
 [v _ISR ISR `II(v  1 e 1 0 ]
-"123
+"309
 [v _main main `(i  1 e 2 0 ]
-"40 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/ringbuffer.h
-[s S19 ringbuffer 50 `uc 1 pp 1 0 `uc 1 gp 1 1 `[48]uc 1 dat 48 2 ]
-"13 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/ringbuffer.c
-[v _ringbufferInit ringbufferInit `(*.1S19  1 e 1 0 ]
-"27
-[v _ringbufferSize ringbufferSize `(uc  1 e 1 0 ]
-"13 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/stdfc.c
-[v _memset memset `(v  1 e 1 0 ]
-"46
-[v _strlen strlen `(uc  1 e 1 0 ]
-"55
-[v _rev rev `(v  1 e 1 0 ]
 "414 /Applications/microchip/xc8/v1.37/include/pic16f1827.h
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
 "475
@@ -87,6 +71,12 @@
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
 "1607
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"1821
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+"1840
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+"1919
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2797
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
 "2848
@@ -117,10 +107,18 @@
 [v _CCPR4L CCPR4L `VEuc  1 e 1 @792 ]
 "5608
 [v _CCP4CON CCP4CON `VEuc  1 e 1 @794 ]
+"6183
+[v _TMR4 TMR4 `VEuc  1 e 1 @1045 ]
+"6202
+[v _PR4 PR4 `VEuc  1 e 1 @1046 ]
+"6221
+[v _T4CON T4CON `VEuc  1 e 1 @1047 ]
 "6310
 [v _PR6 PR6 `VEuc  1 e 1 @1053 ]
 "6329
 [v _T6CON T6CON `VEuc  1 e 1 @1054 ]
+"6652
+[v _ADON ADON `VEb  1 e 0 @1256 ]
 "6692
 [v _BRG16 BRG16 `VEb  1 e 0 @3323 ]
 "6694
@@ -131,6 +129,8 @@
 [v _CREN CREN `VEb  1 e 0 @3308 ]
 "6962
 [v _GIE GIE `VEb  1 e 0 @95 ]
+"6966
+[v _GO_nDONE GO_nDONE `VEb  1 e 0 @1257 ]
 "7032
 [v _IRCF0 IRCF0 `VEb  1 e 0 @1227 ]
 "7034
@@ -151,6 +151,10 @@
 [v _SPEN SPEN `VEb  1 e 0 @3311 ]
 "7344
 [v _SYNC SYNC `VEb  1 e 0 @3316 ]
+"7444
+[v _TMR4IE TMR4IE `VEb  1 e 0 @1177 ]
+"7446
+[v _TMR4IF TMR4IF `VEb  1 e 0 @153 ]
 "7452
 [v _TMR6IF TMR6IF `VEb  1 e 0 @155 ]
 "7488
@@ -161,193 +165,180 @@
 [v _TXEN TXEN `VEb  1 e 0 @3317 ]
 "7572
 [v _nWPUEN nWPUEN `VEb  1 e 0 @1199 ]
-[s S19 ringbuffer 50 `uc 1 pp 1 0 `uc 1 gp 1 1 `[48]uc 1 dat 48 2 ]
-"82 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/main_base.h
-[v _uart_rec_buff_ uart_rec_buff_ `S19  1 e 50 0 ]
-"83
-[v _uart_rec_buff uart_rec_buff `*.1S19  1 e 1 0 ]
+"83 /Users/redxef/Documents/Programming/CAiRO/servocon.X/main.h
+[v _dat0 dat0 `VEui  1 e 2 0 ]
 "84
-[v _cmdbuff cmdbuff `[9]uc  1 e 9 0 ]
+[v _dat1 dat1 `VEui  1 e 2 0 ]
 "85
-[v _arg0buff arg0buff `[9]uc  1 e 9 0 ]
+[v _cycle_adc cycle_adc `VEuc  1 e 1 0 ]
 "86
-[v _arg1buff arg1buff `[9]uc  1 e 9 0 ]
-"87
-[v _status status `uc  1 e 1 0 ]
-"88
-[v _usestr usestr `uc  1 e 1 0 ]
-"13 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/main_v_1_0.c
-[v _dat0 dat0 `ui  1 e 2 0 ]
-"14
-[v _dat1 dat1 `ui  1 e 2 0 ]
-"123
+[v _cycle_timeout cycle_timeout `VEuc  1 e 1 0 ]
+"309 /Users/redxef/Documents/Programming/CAiRO/servocon.X/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"141
+"311
+[v main@buf buf `uc  1 a 1 8 ]
+"310
+[v main@adc_val adc_val `uc  1 a 1 7 ]
+"367
 } 0
-"169 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/main_base.c
+"190
 [v _setDutyPWM4 setDutyPWM4 `(v  1 e 1 0 ]
 {
 [v setDutyPWM4@duty duty `ui  1 p 2 0 ]
-"183
+"204
+} 0
+"225
+[v _putc putc `(v  1 e 1 0 ]
+{
+[v putc@c c `uc  1 a 1 wreg ]
+[v putc@c c `uc  1 a 1 wreg ]
+[v putc@c c `uc  1 a 1 0 ]
+"229
 } 0
 "48
 [v _initVariables initVariables `(v  1 e 1 0 ]
 {
+"53
+} 0
 "55
-} 0
-"40 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/ringbuffer.h
-[s S19 ringbuffer 50 `uc 1 pp 1 0 `uc 1 gp 1 1 `[48]uc 1 dat 48 2 ]
-"13 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/ringbuffer.c
-[v _ringbufferInit ringbufferInit `(*.1S19  1 e 1 0 ]
-{
-[v ringbufferInit@rb rb `*.4S19  1 a 1 wreg ]
-[v ringbufferInit@rb rb `*.4S19  1 a 1 wreg ]
-[v ringbufferInit@rb rb `*.4S19  1 a 1 0 ]
-"20
-} 0
-"13 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/stdfc.c
-[v _memset memset `(v  1 e 1 0 ]
-{
-[v memset@str str `*.4uc  1 a 1 wreg ]
-"14
-[v memset@i i `uc  1 a 1 5 ]
-"13
-[v memset@str str `*.4uc  1 a 1 wreg ]
-[v memset@val val `uc  1 p 1 0 ]
-[v memset@len len `uc  1 p 1 1 ]
-"15
-[v memset@str str `*.4uc  1 a 1 4 ]
-"17
-} 0
-"57 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/main_base.c
 [v _initUART initUART `(v  1 e 1 0 ]
 {
-"74
+"78
 } 0
-"76
+"87
 [v _initTMR6 initTMR6 `(v  1 e 1 0 ]
 {
-"82
+"92
+} 0
+"80
+[v _initTMR4 initTMR4 `(v  1 e 1 0 ]
+{
+"85
 } 0
 "35
 [v _initRegisters initRegisters `(v  1 e 1 0 ]
 {
 "46
 } 0
-"186
+"207
 [v _initPWM4 initPWM4 `(v  1 e 1 0 ]
 {
-"195
+"216
 } 0
-"158
+"179
 [v _initPWM3 initPWM3 `(v  1 e 1 0 ]
 {
-"167
+"188
 } 0
-"141
+"162
 [v _setDutyPWM3 setDutyPWM3 `(v  1 e 1 0 ]
 {
 [v setDutyPWM3@duty duty `ui  1 p 2 0 ]
-"155
+"176
 } 0
-"129
+"150
 [v _initPWM2 initPWM2 `(v  1 e 1 0 ]
 {
-"139
+"160
 } 0
-"112
+"133
 [v _setDutyPWM2 setDutyPWM2 `(v  1 e 1 0 ]
 {
 [v setDutyPWM2@duty duty `ui  1 p 2 0 ]
-"126
+"147
 } 0
-"101
+"122
 [v _initPWM1 initPWM1 `(v  1 e 1 0 ]
 {
-"110
+"131
 } 0
-"84
+"105
 [v _setDutyPWM1 setDutyPWM1 `(v  1 e 1 0 ]
 {
 [v setDutyPWM1@duty duty `ui  1 p 2 0 ]
-"98
+"119
 } 0
-"197
+"218
 [v _initInt initInt `(v  1 e 1 0 ]
 {
-"202
+"223
 } 0
 "17
 [v _initFrequency initFrequency `(v  1 e 1 0 ]
 {
 "33
 } 0
-"52 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/main_v_1_0.c
+"94
+[v _initADC initADC `(v  1 e 1 0 ]
+{
+"103
+} 0
+"274
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"73
+"307
 } 0
-"35
+"257
 [v _setServo setServo `T(v  1 e 1 0 ]
 {
 [v setServo@id id `uc  1 a 1 wreg ]
 [v setServo@id id `uc  1 a 1 wreg ]
 [v setServo@val val `uc  1 p 1 5 ]
 [v setServo@id id `uc  1 a 1 8 ]
-"50
+"272
 } 0
-"169 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/main_base.c
+"190
 [v i1_setDutyPWM4 setDutyPWM4 `(v  1 e 1 0 ]
 {
 [v i1setDutyPWM4@duty duty `ui  1 p 2 0 ]
-"183
+"204
 } 0
-"141
+"162
 [v i1_setDutyPWM3 setDutyPWM3 `(v  1 e 1 0 ]
 {
 [v i1setDutyPWM3@duty duty `ui  1 p 2 0 ]
-"155
+"176
 } 0
-"112
+"133
 [v i1_setDutyPWM2 setDutyPWM2 `(v  1 e 1 0 ]
 {
 [v i1setDutyPWM2@duty duty `ui  1 p 2 0 ]
-"126
+"147
 } 0
-"84
+"105
 [v i1_setDutyPWM1 setDutyPWM1 `(v  1 e 1 0 ]
 {
 [v i1setDutyPWM1@duty duty `ui  1 p 2 0 ]
-"98
+"119
 } 0
-"20 /Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/main_v_1_0.c
+"242
 [v _getSAddr getSAddr `T(uc  1 e 1 0 ]
 {
 [v getSAddr@d0 d0 `uc  1 a 1 wreg ]
 [v getSAddr@d0 d0 `uc  1 a 1 wreg ]
 [v getSAddr@d1 d1 `uc  1 p 1 0 ]
 [v getSAddr@d0 d0 `uc  1 a 1 2 ]
-"22
+"244
 } 0
-"16
+"238
 [v _getPicAddr getPicAddr `T(uc  1 e 1 0 ]
 {
 [v getPicAddr@d0 d0 `uc  1 a 1 wreg ]
 [v getPicAddr@d0 d0 `uc  1 a 1 wreg ]
 [v getPicAddr@d1 d1 `uc  1 p 1 0 ]
 [v getPicAddr@d0 d0 `uc  1 a 1 2 ]
-"18
+"240
 } 0
-"28
+"250
 [v _getData getData `T(uc  1 e 1 0 ]
 {
 [v getData@d0 d0 `uc  1 a 1 wreg ]
-"29
+"251
 [v getData@ret ret `uc  1 a 1 4 ]
-"28
+"250
 [v getData@d0 d0 `uc  1 a 1 wreg ]
 [v getData@d1 d1 `uc  1 p 1 0 ]
 [v getData@d0 d0 `uc  1 a 1 3 ]
-"33
+"255
 } 0

@@ -1,177 +1,40 @@
 
-# 1 "ringbuffer.c"
-
-# 13 "/Applications/microchip/xc8/v1.37/include/stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
+# 1 "main.c"
 
 
+# 19 "main.h"
+#pragma config FOSC = INTOSC
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = ON
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config CLKOUTEN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
 
+#pragma config WRT = OFF
+#pragma config PLLEN = ON
+#pragma config STVREN = OFF
+#pragma config BORV = LO
+#pragma config LVP = OFF
 
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 4 "/Applications/microchip/xc8/v1.37/include/__size_t.h"
-typedef unsigned size_t;
-
-# 7 "/Applications/microchip/xc8/v1.37/include/stdlib.h"
-typedef unsigned short wchar_t;
-
-# 15
-typedef struct {
-int rem;
-int quot;
-} div_t;
-typedef struct {
-unsigned rem;
-unsigned quot;
-} udiv_t;
-typedef struct {
-long quot;
-long rem;
-} ldiv_t;
-typedef struct {
-unsigned long quot;
-unsigned long rem;
-} uldiv_t;
-
-# 53
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-
-
-
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
-
-
-# 13 "/Applications/microchip/xc8/v1.37/include/xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-
-# 86 "/Applications/microchip/xc8/v1.37/include/stdlib.h"
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
-
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
+#pragma warning push
+#pragma warning disable 752
+#pragma warning disable 520
+#pragma warning disable 1498
+#pragma warning pop
 
 # 26 "/Applications/microchip/xc8/v1.37/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
+
+
+# 13 "/Applications/microchip/xc8/v1.37/include/xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
 
 # 49 "/Applications/microchip/xc8/v1.37/include/pic16f1827.h"
 extern volatile unsigned char INDF0 @ 0x000;
@@ -3880,69 +3743,517 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 40 "ringbuffer.h"
-struct ringbuffer {
-uint8_t pp;
-uint8_t gp;
-uint8_t dat[48];
-};
+# 13 "/Applications/microchip/xc8/v1.37/include/stdint.h"
+typedef signed char int8_t;
 
-# 53
-struct ringbuffer *ringbufferInit(struct ringbuffer *rb);
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
 
 # 63
-void ringbufferDelete(struct ringbuffer **rb);
+typedef unsigned long int uint32_t;
 
-# 74
-uint8_t ringbufferSize(struct ringbuffer *rb);
+# 71
+typedef signed char int_least8_t;
 
-# 85
-uint8_t ringbufferPut(struct ringbuffer *rb, uint8_t dat);
+# 78
+typedef signed int int_least16_t;
 
-# 96
-int16_t ringbufferGet(struct ringbuffer *rb);
+# 90
+typedef signed short long int int_least24_t;
 
-# 13 "ringbuffer.c"
-struct ringbuffer *ringbufferInit(struct ringbuffer *rb) {
-if (rb == (0))
-return (0);
-rb->pp = 0;
-rb->gp = 0;
+# 98
+typedef signed long int int_least32_t;
 
-return rb;
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+# 4 "/Applications/microchip/xc8/v1.37/include/__size_t.h"
+typedef unsigned size_t;
+
+# 7 "/Applications/microchip/xc8/v1.37/include/stdlib.h"
+typedef unsigned short wchar_t;
+
+# 15
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 53
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 86
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 83 "main.h"
+volatile uint16_t dat0;
+volatile uint16_t dat1;
+volatile uint8_t cycle_adc;
+volatile uint8_t cycle_timeout;
+
+
+
+
+void initFrequency(void);
+void initRegisters(void);
+void initVariables(void);
+void initUART(void);
+void initTMR6(void);
+
+void setDutyPWM1(uint16_t duty);
+void initPWM1(void);
+
+void setDutyPWM2(uint16_t duty);
+void initPWM2(void);
+
+void setDutyPWM3(uint16_t duty);
+void initPWM3(void);
+
+void setDutyPWM4(uint16_t duty);
+void initPWM4(void);
+
+void initInt(void);
+
+void putc(char c);
+void putstr(const char *c);
+
+# 17 "main.c"
+void initFrequency(void) {
+
+# 27
+IRCF0 = 1;
+IRCF1 = 0;
+IRCF2 = 1;
+IRCF3 = 1;
+
+OSCTUNE = 0b00000000;
 }
 
-void ringbufferDelete(struct ringbuffer **rb) {
+void initRegisters(void) {
+PORTA = 0b00000000;
+ANSELA = 0b00000000;
+TRISA = 0b00000000;
 
+PORTB = 0b00000000;
+ANSELB = 0b00010000;
+TRISB = 0b00010010;
 
+WPUB = 0b00000000;
+nWPUEN = 0;
 }
 
-uint8_t ringbufferSize(struct ringbuffer *rb) {
-return 48;
+void initVariables(void) {
+dat0 = -1;
+dat1 = -1;
+cycle_adc = 0;
+cycle_timeout = 0;
 }
 
-uint8_t ringbufferPut(struct ringbuffer *rb, uint8_t dat) {
+void initUART(void) {
+RXDTSEL = 0;
+TXCKSEL = 0;
 
-# 37
-if ((rb->pp >= rb->gp || rb->pp < rb->gp - 1) && (rb->pp != ringbufferSize(rb) - 1 || rb->gp != 0)) {
-rb->dat[rb->pp] = dat;
-rb->pp += 1;
-if (rb->pp == ringbufferSize(rb))
-rb->pp = 0;
-return 0;
-}
-return 1;
-}
+CREN = 1;
+TXEN = 1;
+SYNC = 0;
 
-int16_t ringbufferGet(struct ringbuffer *rb) {
-int16_t ret = -1;
-if (rb->gp < rb->pp || rb->gp > rb->pp) {
-ret = rb->dat[rb->gp];
-rb->gp += 1;
-if (rb->gp == ringbufferSize(rb))
-rb->gp = 0;
+# 69
+BRGH = 1;
+BRG16 = 1;
+SPBRG = 8;
+
+
+SPEN = 1;
+
+while (RCIF)
+RCREG;
 }
 
+void initTMR4(void) {
+TMR4 = 0x00;
+PR4 = 0xff;
+T4CON = 0b01110111;
+TMR4IF = 0;
+}
+
+void initTMR6(void) {
+
+PR6 = 0xff;
+T6CON = 0b111;
+TMR6IF = 0;
+}
+
+void initADC(void) {
+ADCON0 = 0;
+ADCON1 = 0;
+
+ADCON0 |= 8 << 2;
+ADCON1 |= 0 << 7;
+ADCON1 |= 000 << 4;
+ADCON1 |= 0 << 2;
+ADCON1 |= 0;
+}
+
+void setDutyPWM1(uint16_t duty) {
+
+# 112
+if (duty > 0x03ff)
+duty = 0x03ff;
+
+
+CCP1CON &= ~0b00110000;
+CCP1CON |= (duty & 0x02) << 4 ;
+CCPR1L = (uint8_t) (duty >> 2);
+}
+
+
+void initPWM1(void) {
+
+TRISB |= 1 << 3;
+CCP1CON = 0b00001100;
+setDutyPWM1(0);
+CCPTMRS |= 0x02 << 0;
+TMR6IF = 0;
+while(!TMR6IF);
+TRISB &= ~(1 << 3);
+}
+
+void setDutyPWM2(uint16_t duty) {
+
+# 140
+if (duty > 0x03ff)
+duty = 0x03ff;
+
+
+CCP2CON &= ~0b00110000;
+CCP2CON |= (duty & 0x02) << 4 ;
+CCPR2L = (uint8_t) (duty >> 2);
+}
+
+
+void initPWM2(void) {
+
+CCP2SEL = 1;
+TRISA |= 1 << 7;
+CCP2CON = 0b00001100;
+setDutyPWM2(0);
+CCPTMRS |= 0x02 << 2;
+TMR6IF = 0;
+while(!TMR6IF);
+TRISA &= ~(1 << 7);
+}
+
+void setDutyPWM3(uint16_t duty) {
+
+# 169
+if (duty > 0x03ff)
+duty = 0x03ff;
+
+
+CCP3CON &= ~0b00110000;
+CCP3CON |= (duty & 0x02) << 4 ;
+CCPR3L = (uint8_t) (duty >> 2);
+}
+
+
+void initPWM3(void) {
+
+TRISA |= 1 << 3;
+CCP3CON = 0b00001100;
+setDutyPWM3(0);
+CCPTMRS |= 0x02 << 4;
+TMR6IF = 0;
+while(!TMR6IF);
+TRISA &= ~(1 << 3);
+}
+
+void setDutyPWM4(uint16_t duty) {
+
+# 197
+if (duty > 0x03ff)
+duty = 0x03ff;
+
+
+CCP4CON &= ~0b00110000;
+CCP4CON |= (duty & 0x02) << 4 ;
+CCPR4L = (uint8_t) (duty >> 2);
+}
+
+
+void initPWM4(void) {
+
+TRISA |= 1 << 4;
+CCP4CON = 0b00001100;
+setDutyPWM3(0);
+CCPTMRS |= 0x02 << 6;
+TMR6IF = 0;
+while(!TMR6IF);
+TRISA &= ~(1 << 4);
+}
+
+void initInt(void) {
+TMR4IE = 1;
+RCIE = 1;
+PEIE = 1;
+GIE = 1;
+}
+
+void putc(char c) {
+while(!TRMT);
+TXREG = c;
+__nop();
+}
+
+void putstr(const char *c) {
+while (*c) {
+putc(*c);
+c++;
+}
+}
+
+inline uint8_t getPicAddr(uint8_t d0, uint8_t d1) {
+return (d0 >> 5) & 0b00000011;
+}
+
+inline uint8_t getSAddr(uint8_t d0, uint8_t d1) {
+return (d0 >> 3) & 0b00000011;
+}
+
+inline uint8_t getMode(uint8_t d0, uint8_t d1) {
+return (d0 >> 1) & 0b00000011;
+}
+
+inline uint8_t getData(uint8_t d0, uint8_t d1) {
+uint8_t ret = 0;
+ret |= (d0 & 0b00000001) << 7;
+ret |= (d1 & 0b01111111);
 return ret;
+}
 
+inline void setServo(uint8_t id, uint8_t val) {
+switch (id) {
+case 0:
+setDutyPWM1(val);
+break;
+case 1:
+setDutyPWM2(val);
+break;
+case 2:
+setDutyPWM3(val);
+break;
+case 3:
+setDutyPWM4(val);
+break;
+}
+}
+
+void interrupt ISR(void) {
+
+# 278
+if (RCIE && RCIF) {
+
+# 282
+if (dat0 == -1) {
+dat0 = RCREG;
+if (!(dat0 & 0b10000000)) {
+dat0 = -1;
+} else if (getPicAddr((uint8_t) (dat0 & 0xff), (uint8_t) (dat1 & 0xff)) != 1) {
+dat0 = -1;
+}
+} else if (dat1 == -1) {
+dat1 = RCREG;
+setServo(getSAddr((uint8_t) (dat0 & 0xff), (uint8_t) (dat1 & 0xff)), getData((uint8_t) (dat0 & 0xff), (uint8_t) (dat1 & 0xff)));
+dat0 = dat1 = -1;
+}
+RCIF = 0;
+}
+if (TMR4IF) {
+
+# 300
+cycle_adc++;
+cycle_timeout++;
+TMR4IF = 0;
+}
+
+# 307
+}
+
+int main(void) {
+uint8_t adc_val;
+uint8_t buf;
+initFrequency();
+initRegisters();
+initVariables();
+initUART();
+initTMR4();
+initTMR6();
+initADC();
+initPWM1();
+initPWM2();
+initPWM3();
+initPWM4();
+setDutyPWM1(0);
+setDutyPWM2(0);
+setDutyPWM3(0);
+setDutyPWM4(0);
+initInt();
+
+while (1) {
+if (cycle_adc == 0x0a) {
+
+ADON = 1;
+_delay((unsigned long)((10)*(4000000/4000.0)));
+GO_nDONE = 1;
+while (GO_nDONE);
+adc_val = ADRESH;
+ADON = 0;
+
+putc('>');
+buf = (adc_val >> 4) & 0x0f;
+if (buf >= 0x0a)
+buf += 'a' - 0x0a;
+else
+buf += '0';
+putc(buf);
+buf = adc_val & 0x0f;
+if (buf >= 0x0a)
+buf += 'a' - 0x0a;
+else
+buf += '0';
+putc(buf);
+putc('h');
+putc('<');
+
+cycle_adc = 0;
+}
+if (cycle_timeout == 0xff) {
+
+setDutyPWM1(0);
+setDutyPWM2(0);
+setDutyPWM3(0);
+setDutyPWM4(0);
+
+cycle_timeout = 0;
+}
+}
 }

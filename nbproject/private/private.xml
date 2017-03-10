@@ -8,6 +8,9 @@
             <file>file:/Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/stdfc.c</file>
             <file>file:/Users/redxef/Documents/OneDrive/Diplomarbeit/Programmierung/Servocon/CAiRO-servocon.X/main_base.h</file>
         </group>
-        <group name="MPLABXProjects"/>
+        <group name="MPLABXProjects">
+            <file>file:/Users/redxef/Documents/Programming/CAiRO/servocon.X/main.c</file>
+            <file>file:/Users/redxef/Documents/Programming/CAiRO/servocon.X/main.h</file>
+        </group>
     </open-files>
 </project-private>
